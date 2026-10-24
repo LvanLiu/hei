@@ -6,6 +6,20 @@
 
 ## 安装
 
+### 下载安装
+
+从 [Releases](https://github.com/LvanLiu/hei/releases) 下载最新的 `hei-*.dmg`，打开后把 **hei** 拖进「应用程序」。
+
+应用是 ad-hoc 签名、没有做 Apple 公证，首次打开需要**右键 → 打开**。如果系统提示「已损坏」，执行：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/hei.app
+```
+
+需要 macOS 13+、Apple Silicon（DMG 由 CI 在 macOS runner 上构建）。
+
+### 从源码编译
+
 需要 macOS 13 或更高版本，以及 Xcode 命令行工具。
 
 ```bash
@@ -13,6 +27,8 @@ cd hei
 make build      # 编译出 build/hei.app
 make run        # 启动，菜单栏出现图标
 ```
+
+### 首次授权
 
 首次使用要授权：
 
